@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:admin"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="150" Width="500" MaxWidth="500" MaxHeight="150" MinWidth="500" MinHeight="150">
     <Grid>
-        
+        <Menu x:Name="menu" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="500" Margin="0,0,0,0">
+            <MenuItem Header="Show">
+                <MenuItem Header="Doctor" Click="viewDoc" ></MenuItem>
+                <MenuItem Header="Pasient"></MenuItem>
+                <MenuItem Header="Obstegenya"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Header="Doctor"></MenuItem>
+                <MenuItem Header="Pasient"></MenuItem>
+                <MenuItem Header="Obstegenya"></MenuItem>
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>

@@ -10,25 +10,31 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Hospital;
 
 namespace admin
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for View.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class View : Window
     {
-        public MainWindow()
+        public View()
         {
             InitializeComponent();
         }
 
-        private void viewDoc(object sender, RoutedEventArgs e)
+        private void chenge_Doc(object sender, DependencyPropertyChangedEventArgs e)
         {
-            View showDoc = new View();
-            showDoc.Show();
+
+        }
+
+        private void loadViewDoc(object sender, RoutedEventArgs e)
+        {
+            HospitalModelDataContext data = new HospitalModelDataContext();
+            IEnumerable<Doctor> doctors = data.Doctors.Select(s => s);
+            dataGrid.ItemsSource = doctors;
         }
     }
 }
