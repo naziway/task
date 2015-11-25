@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DataSource" Class="HospitalModelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=NAZI-PC;Integrated Security=True" SettingsObjectName="Hospital.Properties.Settings" SettingsPropertyName="DataSourceConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Patient" Member="Patients">
+    <Type Name="Patient">
+      <Column Name="id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="lastname" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="date_of_birth" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Doctor" Member="Doctors">
+    <Type Name="Doctor">
+      <Column Name="id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="lastname" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="posada" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Obstegenya" Member="Obstegenyas">
+    <Type Name="Obstegenya">
+      <Column Name="id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="doctor" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="patient" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="time_with" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="time_to" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
