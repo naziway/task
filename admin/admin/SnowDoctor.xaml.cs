@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Hospital;
+using System.Text.RegularExpressions;
 
 namespace admin
 {
@@ -20,21 +21,40 @@ namespace admin
     /// </summary>
     public partial class View : Window
     {
+        
         public View()
         {
             InitializeComponent();
         }
-
-        private void chenge_Doc(object sender, DependencyPropertyChangedEventArgs e)
-        {
-
-        }
-
-        private void loadViewDoc(object sender, RoutedEventArgs e)
+        public void getDoc(string str)
         {
             HospitalModelDataContext data = new HospitalModelDataContext();
-            IEnumerable<Doctor> doctors = data.Doctors.Select(s => s);
+            IEnumerable<Doctor> doctors;
+            if (str == "")
+            {
+                doctors = data.Doctors.Select(s => s);
+            }
+            else
+            {
+                doctors = data.Doctors.Where(s => s.name.Contains(str));
+            }
             dataGrid.ItemsSource = doctors;
+
+        }
+        
+        private void loadViewDoc(object sender, RoutedEventArgs e)
+        {
+            //getDoc("");
+            HospitalModelDataContext data = new HospitalModelDataContext();
+            IEnumerable<Doctor> doctors;
+            doctors = data.Doctors.Where(s => s.name.Contains("а"));
+            dataGrid.ItemsSource = doctors;
+
+        }        
+        private void keyUpDoc(object sender, KeyEventArgs e)
+        {
+            getDoc(docResearch.Text);
+
         }
     }
 }
