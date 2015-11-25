@@ -10,30 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace admin
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ShowObsteg.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ShowObsteg : Window
     {
-        public MainWindow()
+        public ShowObsteg()
         {
             InitializeComponent();
-        }
-
-        private void viewDoc(object sender, RoutedEventArgs e)
-        {
-            View showDoc = new View();
-            showDoc.Show();
-        }
-        private void viewPas(object sender, RoutedEventArgs e)
-        {
-            ShowPas showPas = new ShowPas();
-            showPas.Show();
         }
     }
 }

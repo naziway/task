@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,46 +12,40 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Hospital;
-using System.Text.RegularExpressions;
 
 namespace admin
 {
     /// <summary>
-    /// Interaction logic for View.xaml
+    /// Interaction logic for ShowPas.xaml
     /// </summary>
-    public partial class View : Window
+    public partial class ShowPas : Window
     {
-        
-        public View()
+        public ShowPas()
         {
             InitializeComponent();
         }
         public void getDoc(string str)
         {
             HospitalModelDataContext data = new HospitalModelDataContext();
-            IEnumerable<Doctor> doctors;
+            IEnumerable<Patient> doctors;
             if (str == "")
             {
-                doctors = data.Doctors.Select(s => s);
+                doctors = data.Patients.Select(s => s);
             }
             else
             {
-                doctors = data.Doctors.Where(s => s.lastname.Contains(str));
+                doctors = data.Patients.Where(s => s.lastname.Contains(str));
             }
             dataGrid.ItemsSource = doctors;
-
         }
-        
-        private void loadViewDoc(object sender, RoutedEventArgs e)
+        private void loadViewPas(object sender, RoutedEventArgs e)
         {
             getDoc("");
-            
-        }        
-        private void keyUpDoc(object sender, KeyEventArgs e)
-        {
-            getDoc(docResearch.Text);
+        }
 
+        private void keyUpPas(object sender, KeyEventArgs e)
+        {
+            getDoc(pasResearch.Text);
         }
     }
 }

@@ -1,11 +1,11 @@
-﻿<Window x:Class="admin.View"
+﻿<Window x:Class="admin.ShowPas"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:admin"
         mc:Ignorable="d"
-        Title="View Dostor" Height="400" Width="500" Loaded="loadViewDoc" MaxHeight="400" MaxWidth="500">
+        Title="ShowPas" Height="400" Width="500" Loaded="loadViewPas">
     <Grid>
         <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="316" Margin="32,47,0,0" VerticalAlignment="Top" Width="430">
             <DataGrid.Columns>
@@ -14,6 +14,6 @@
                 <DataGridTextColumn Header="Posada" Binding="{Binding Path=posada}" Width="172"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBox x:Name="docResearch" HorizontalAlignment="Left" Height="27" Margin="34,11,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="207"  KeyUp="keyUpDoc"/>
+        <TextBox x:Name="pasResearch"   HorizontalAlignment="Left" Height="27" Margin="34,11,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="207"  KeyUp="keyUpPas"/>
     </Grid>
 </Window>

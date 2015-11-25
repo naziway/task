@@ -10,7 +10,7 @@
         <Menu x:Name="menu" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="500" Margin="0,0,0,0">
             <MenuItem Header="Show">
                 <MenuItem Header="Doctor" Click="viewDoc" ></MenuItem>
-                <MenuItem Header="Pasient"></MenuItem>
+                <MenuItem Header="Pasient" Click="viewPas"></MenuItem>
                 <MenuItem Header="Obstegenya"></MenuItem>
             </MenuItem>
             <MenuItem Header="Edit">
