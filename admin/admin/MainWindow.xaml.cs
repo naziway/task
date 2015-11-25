@@ -35,5 +35,11 @@ namespace admin
             ShowPas showPas = new ShowPas();
             showPas.Show();
         }
+
+        private void viewObs(object sender, RoutedEventArgs e)
+        {
+            ShowObsteg showObsteg = new ShowObsteg();
+            showObsteg.Show();
+        }
     }
 }

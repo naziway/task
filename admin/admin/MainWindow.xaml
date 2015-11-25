@@ -11,7 +11,7 @@
             <MenuItem Header="Show">
                 <MenuItem Header="Doctor" Click="viewDoc" ></MenuItem>
                 <MenuItem Header="Pasient" Click="viewPas"></MenuItem>
-                <MenuItem Header="Obstegenya"></MenuItem>
+                <MenuItem Header="Obstegenya" Click="viewObs" ></MenuItem>
             </MenuItem>
             <MenuItem Header="Edit">
                 <MenuItem Header="Doctor"></MenuItem>

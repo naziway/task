@@ -27,16 +27,16 @@ namespace admin
         public void getDoc(string str)
         {
             HospitalModelDataContext data = new HospitalModelDataContext();
-            IEnumerable<Patient> doctors;
+            IEnumerable<Patient> patient;
             if (str == "")
             {
-                doctors = data.Patients.Select(s => s);
+                patient = data.Patients.Select(s => s);
             }
             else
             {
-                doctors = data.Patients.Where(s => s.lastname.Contains(str));
+                patient = data.Patients.Where(s => s.lastname.Contains(str));
             }
-            dataGrid.ItemsSource = doctors;
+            dataGrid.ItemsSource = patient;
         }
         private void loadViewPas(object sender, RoutedEventArgs e)
         {

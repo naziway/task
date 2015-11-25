@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,5 +24,18 @@ namespace admin
         {
             InitializeComponent();
         }
+        public void getDoc(string str)
+        {
+            HospitalModelDataContext data = new HospitalModelDataContext();
+            IEnumerable<Obstegenya> obstegenya;                       
+            obstegenya = data.Obstegenyas.Select(s => s);                                                   
+            dataGrid.ItemsSource = obstegenya;
+        }
+
+        private void loadViewObsteg(object sender, RoutedEventArgs e)
+        {
+            getDoc("");
+        }
+                
     }
 }

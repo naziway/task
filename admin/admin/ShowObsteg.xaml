@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:admin"
         mc:Ignorable="d"
-        Title="ShowObsteg" Height="300" Width="300">
+        Title="Show Obsteg" Height="400" Width="500" Loaded="loadViewObsteg">
     <Grid>
-        
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="316" Margin="32,47,0,0" VerticalAlignment="Top" Width="430" >
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Doctor" Binding="{Binding Path=doctor}" Width="150"></DataGridTextColumn>
+                <DataGridTextColumn Header="Patient" Binding="{Binding Path=patient}" Width="100"></DataGridTextColumn>
+                <DataGridTextColumn Header="Time With" Binding="{Binding Path=timewith}" Width="85"></DataGridTextColumn>
+                <DataGridTextColumn Header="Time To" Binding="{Binding Path=timeto}" Width="85"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
     </Grid>
 </Window>
